@@ -60,6 +60,12 @@ Template.work.onRendered(function() {
     	$(window).resize(function() {
     		resizeItem();
     	});
+
+			$(window).mousemove(function(e){
+				var posX = MathMap(e.pageX, 0, $(window).width(), 0, 100);
+				var posY = MathMap(e.pageY, 0, $(window).height(), 0, 100);
+				$(".zoom .imagensita").css('background-position', posX + "% " + posY + "%");
+			});
     });
   });
 });
@@ -78,4 +84,15 @@ Template.work.helpers({
     var image = category && Images.findOne({ categoryId: category._id }, { sort: { index: 1 } });
   	return image && image._id == this._id;
   }
+});
+
+Template.work.events({
+	'click .item': function (event, template) {
+		if (!isTouchDevice()) {
+			$(event.currentTarget)
+			.toggleClass('zoom')
+			.find('.imagensita')
+			.css("background-position", "center");
+		}
+	}
 });

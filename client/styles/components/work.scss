@@ -14,6 +14,27 @@ $indicators-size: 50px;
 		height: 20px;
 		min-width: 10px;
 	}
+
+	&.zoom {
+		background-color: white;
+		cursor: zoom-out;
+		position: fixed !important;
+		z-index: 10000;
+		height: 100% !important;
+		width: 100% !important;
+		top: 0;
+		left: 0;
+		.imagensita {
+			background-color: white;
+			cursor: zoom-out;
+			position: fixed;
+			background-size: 105%;
+			height: 100% !important;
+			width: 100% !important;
+			top: 0;
+			left: 0;
+		}
+	}
 }
 
 .imagensita {
