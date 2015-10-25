@@ -1,0 +1,41 @@
+<template name="work">
+  {{# if Template.subscriptionsReady }}
+    {{# if category }}
+      <div id="carousel" class="carousel slide hidden-xs">
+        <div class="carousel-inner">
+          {{# each images }}
+            <div class="item {{# if isFirst }}active{{/ if }}">
+              <div class="imagensita" style="background-image: url({{ image.url }})"></div>
+              <div class="descripcionsita">{{ description }}</div>
+            </div>
+          {{/ each }}
+        </div>
+        <ul class="indicators">
+          {{# each images }}
+            <li data-target="#carousel" data-slide-to="{{ @index }}" class="{{# if isFirst }}active{{/ if }}" style="background-image: url({{ thumb.url }})">
+            </li>
+          {{/ each }}
+        </ul>
+      </div>
+      <div class="container-fluid visible-xs">
+        {{# each images }}
+          <div class="">
+            <img class="img-responsive" src="{{ image.url }}" /><br>
+            <p class="text-center">
+              {{ description }}
+            </p>
+          </div>
+        {{/ each }}
+      </div>
+    {{ else }}
+      <p class="text-center">
+        No se encontró lo que buscabas
+      </p>
+    {{/ if }}
+  {{ else }}
+    <br>
+    <p class="text-center">
+      Cargando...
+    </p>
+  {{/ if }}
+</template>

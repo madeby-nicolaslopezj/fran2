@@ -1,0 +1,34 @@
+<template name="layout">
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="navbar-col">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="{{ pathFor 'home' }}">Francisca Infante</a>
+          </div>
+           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+             <ul class="nav navbar-nav navbar-right">
+               <li class="{{ isActiveRoute regex='about' }}"><a href="{{ pathFor 'about' }}">About</a></li>
+               <li class="dropdown {{ isActiveRoute regex='work' }}">
+                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Work <span class="caret"></span></a>
+                 <ul class="dropdown-menu">
+                   {{# each categories }}
+                    <li class="{{ isActivePath path=getCategoryPath }}"><a href="{{ pathFor 'work' }}">{{ name }}</a></li>
+                   {{/ each }}
+                 </ul>
+               </li>
+               <li class="{{ isActiveRoute regex='contact' }}"><a href="{{ pathFor 'contact' }}">Contact</a></li>
+             </ul>
+           </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+  {{> yield }}
+</template>

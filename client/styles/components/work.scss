@@ -1,0 +1,61 @@
+@import "{}/client/styles/components/_variables.scss";
+
+$item-height: 500px;
+$indicators-size: 50px;
+
+.item {
+	text-align: center;
+
+	.descripcionsita {
+		font-weight: 300;
+		margin-top: 8px;
+		margin-bottom: 10px;
+		font-size: 11px;
+		height: 20px;
+		min-width: 10px;
+	}
+}
+
+.imagensita {
+	height: $item-height;
+	text-align: center;
+	background-size: contain;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+.indicators {
+	list-style: none;
+	padding-top: 20px;
+	padding-left: 0;
+	text-align: center;
+	margin-bottom: 0;
+
+	li {
+		cursor: pointer;
+		position: relative;
+		margin: -2.4px -5px;
+		overflow: hidden;
+		display: inline-block;
+		background-size: cover;
+		background-position: center;
+		background-repeat: no-repeat;
+		height: $indicators-size;
+		width: $indicators-size;
+	}
+}
+
+.iconitos {
+	text-align: center;
+	font-size: 22px;
+	margin: 10px;
+	@media (max-width: $screen-xs-max) {
+		position: relative;
+		font-size: 22px;
+		bottom: 5px;
+	}
+
+	a {
+		color: darken(#fff, 30%);
+	}
+}

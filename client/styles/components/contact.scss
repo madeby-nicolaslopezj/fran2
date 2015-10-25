@@ -1,0 +1,36 @@
+@import "{}/client/styles/components/_variables.scss";
+
+$line-color: lighten(#000, 40%);
+$background-color: #fff;
+
+.contact {
+  h3 {
+    font-size: 20px;
+    padding-bottom: 10px;
+  }
+
+  button {
+    background-color: $background-color;
+    border-color: $line-color;
+    color: $line-color;
+    border-radius: 0;
+    font-size: 12px;
+    &:hover {
+      background-color: $pink-color;
+      color: $line-color;
+    }
+  }
+
+  input, textarea {
+    background-color: $background-color;
+    border-color: $line-color;
+    color: $line-color;
+    border-radius: 0;
+    font-size: 12px;
+    &:focus {
+      box-shadow: none;
+      border-color: $pink-darken;
+    }
+  }
+
+}

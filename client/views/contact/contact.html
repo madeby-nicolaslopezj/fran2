@@ -1,0 +1,47 @@
+<template name="contact">
+  <div class="container contact">
+    <h3>Contacto</h3>
+    <div class="row">
+      <div class="col-sm-6">
+        {{# unless contactSent }}
+          {{# autoForm schema='ContactSchema' id="contactForm" type="method" meteormethod="sendContact" }}
+            {{> afQuickField name="name" placeholder="Nombre" class="span12" label=false }}
+            {{> afQuickField name="email"  placeholder="Email" class="span12" label=false }}
+            {{> afQuickField name="message"  placeholder="Mensaje" rows=10 class="span12" label=false }}
+            <button type="submit" class="btn btn-primary">Enviar</button>
+          {{/ autoForm }}
+        {{ else }}
+          <div>
+            <p>{{ dict 'contact.emailSent' }}</p>
+          </div>
+        {{/ unless }}
+        <br>
+      </div>
+      <div class="col-sm-4 col-sm-offset-1 lacosita-social">
+        <br><br>
+        <div class="hidden-xs">
+          <br>
+        </div>
+        <p>
+          <a target="_BLANK" href="http://instagram.com/{{ dict 'social.instagram' }}">
+            <i class="fa fa-fw fa-instagram"></i>
+            {{ dict 'social.instagram' }}
+          </a>
+        </p>
+        <p>
+          <a target="_BLANK" href="http://facebook.com/{{ dict 'social.facebook' }}">
+            <i class="fa fa-fw fa-facebook"></i>
+            {{ dict 'social.facebook' }}
+          </a>
+        </p>
+        <p>
+          <a href="mailto:{{ dict 'social.email' }}">
+            <i class="fa fa-fw fa-envelope"></i>
+            {{ dict 'social.email' }}
+          </a>
+        </p>
+        <br>
+      </div>
+    </div>
+  </div>
+</template>

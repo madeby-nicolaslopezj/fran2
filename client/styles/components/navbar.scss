@@ -1,0 +1,13 @@
+@import "{}/client/styles/components/_variables.scss";
+
+.navbar {
+  .navbar-brand {
+    text-transform: uppercase;
+  }
+
+  @media (min-width: $grid-float-breakpoint) {
+    .navbar-col {
+      margin: 0 5%;
+    }
+  }
+}
