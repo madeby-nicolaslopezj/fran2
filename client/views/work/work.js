@@ -15,7 +15,7 @@ Template.work.onCreated(function() {
 			SEO.set({
 	  		title: category.name + ' - ' + orion.dictionary.get('seo.title'),
 	  		link: {
-	  			icon: orion.dictionary.get('seo.favicon.url'),
+	  			icon: Meteor.absoluteUrl().slice(0, -1) + orion.dictionary.get('seo.favicon.url'),
 	  		},
 	  		meta: {
 	  			'description': orion.dictionary.get('seo.description')
@@ -23,14 +23,14 @@ Template.work.onCreated(function() {
 	  		og: {
 	  			'title': category.name +  ' - ' + orion.dictionary.get('seo.title'),
 	  			'description': orion.dictionary.get('seo.description'),
-	  			'image': orion.dictionary.get('seo.image.url')
+	  			'image': Meteor.absoluteUrl().slice(0, -1) + orion.dictionary.get('seo.image.url')
 	  		}
 	  	});
     } else {
 			SEO.set({
 	  		title: 'No encontrado - ' + orion.dictionary.get('seo.title'),
 	  		link: {
-	  			icon: orion.dictionary.get('seo.favicon.url'),
+	  			icon: Meteor.absoluteUrl().slice(0, -1) + orion.dictionary.get('seo.favicon.url'),
 	  		},
 	  		meta: {
 	  			'description': orion.dictionary.get('seo.description')
@@ -38,7 +38,7 @@ Template.work.onCreated(function() {
 	  		og: {
 	  			'title': 'No encontrado - ' + orion.dictionary.get('seo.title'),
 	  			'description': orion.dictionary.get('seo.description'),
-	  			'image': orion.dictionary.get('seo.image.url')
+	  			'image': Meteor.absoluteUrl().slice(0, -1) + orion.dictionary.get('seo.image.url')
 	  		}
 	  	});
 		}
