@@ -1,0 +1,29 @@
+<template name='productsIndex'>
+  {{# if Template.subscriptionsReady }}
+    {{# if products }}
+      <div class="container store">
+        {{{ dict 'store.text' }}}
+        <br><br>
+      </div>
+      <div class="container-fluid store">
+        <div class="row">
+          {{# each products }}
+            <div class="col-sm-6 store-col {{# if isSelected }}selected{{/ if }}">
+              {{> productsIndexItem }}
+            </div>
+          {{/ each }}
+        </div>
+
+      </div>
+      {{> productsContact products=selectedProducts }}
+    {{ else }}
+      <p style="text-align: center">
+        No se encontró lo que buscabas
+      </p>
+    {{/ if }}
+  {{ else }}
+    <p style="text-align: center">
+      Cargando...
+    </p>
+  {{/ if }}
+</template>

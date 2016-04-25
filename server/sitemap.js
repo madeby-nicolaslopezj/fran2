@@ -1,10 +1,10 @@
-sitemaps.add('/sitemap.xml', function() {
+sitemaps.add('/sitemap.xml', function () {
 
   var basicRoutes = ['home', 'about', 'contact'];
 
   var items = [];
 
-  _.each(basicRoutes, function(routeName){
+  _.each(basicRoutes, function (routeName) {
     items.push({
       page: Router.path(routeName),
       lastmod: new Date(),
@@ -12,7 +12,7 @@ sitemaps.add('/sitemap.xml', function() {
     });
   });
 
-  Categories.find().forEach(function(category) {
+  Categories.find().forEach(function (category) {
     items.push({
       page: Router.path('work', category),
       lastmod: new Date(),

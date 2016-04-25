@@ -1,23 +1,28 @@
 Router.configure({
-  trackPageView: true
+  trackPageView: true,
 });
 
 Router.route('/', {
-	name: 'home',
-	layoutTemplate: 'layout'
+  name: 'home',
+  layoutTemplate: 'layout',
 });
 
 Router.route('/contacto', {
-	name: 'contact',
-	layoutTemplate: 'layout'
+  name: 'contact',
+  layoutTemplate: 'layout',
 });
 
 Router.route('/about', {
-	name: 'about',
-	layoutTemplate: 'layout'
+  name: 'about',
+  layoutTemplate: 'layout',
+});
+
+Router.route('/venta', {
+  name: 'products.index',
+  layoutTemplate: 'layout',
 });
 
 Router.route('/:url', {
-	name: 'work',
-	layoutTemplate: 'layout'
+  name: 'work',
+  layoutTemplate: 'layout',
 });

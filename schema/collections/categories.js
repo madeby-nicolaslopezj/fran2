@@ -3,29 +3,29 @@ Categories = new orion.collection('categories', {
   singularName: 'categoría',
   title: 'Categorías',
   link: {
-    title: 'Categorías'
+    title: 'Categorías',
   },
   tabular: {
     columns: [
       { data: 'index', title: 'Lugar' },
-      { data: 'name', title: 'Nombre' }
-    ]
-  }
+      { data: 'name', title: 'Nombre' },
+    ],
+  },
 });
 
 Categories.attachSchema(new SimpleSchema({
   index: {
     type: Number,
-    label: 'Lugar'
+    label: 'Lugar',
   },
   name: {
     type: String,
-    label: 'Nombre'
+    label: 'Nombre',
   },
   url: {
     type: String,
     label: 'URL',
-    unique: true
+    unique: true,
   },
-  createdAt: orion.attribute('createdAt')
+  createdAt: orion.attribute('createdAt'),
 }));

@@ -1,0 +1,55 @@
+@import "{}/client/styles/components/_variables.scss";
+
+.store {
+
+  .store-col {
+    border-bottom: 1px solid #eee;
+    border-right: 1px solid #eee;
+    cursor: pointer;
+    
+    &:nth-child(even) {
+      border-right: none;
+    }
+    &:last-of-type {
+      border-bottom: none;
+    }
+
+    &.selected {
+      background-color: lighten(#000, 96%);
+    }
+  }
+
+  .item {
+    padding: 20px;
+    text-align: left;
+  }
+
+  .image-box {
+    height: 400px;
+    width: 100%;
+    background-position: center center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-color: lighten(#000, 99%);
+    border-radius: 3px;
+  }
+
+  .thumbs-container {
+    text-align: center;
+  }
+
+  .thumb-box {
+    margin-top: 5px;
+    height: 60px;
+    width: 60px;
+    background-position: center center;
+    background-size: cover;
+    display: inline-block;
+    cursor: pointer;
+
+    &.selected {
+      border: solid 2px lighten(#000, 99%);
+    }
+  }
+
+}

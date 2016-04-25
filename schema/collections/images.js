@@ -3,39 +3,39 @@ Images = new orion.collection('images', {
   singularName: 'imagen',
   title: 'Imagenes',
   link: {
-    title: 'Imagenes'
+    title: 'Imagenes',
   },
   tabular: {
     columns: [
       { data: 'index', title: 'Lugar' },
       { data: 'description', title: 'Descripción' },
       orion.attributeColumn('image', 'image', 'Imagen'),
-      orion.attributeColumn('hasOne', 'categoryId', 'Categoría')
-    ]
-  }
+      orion.attributeColumn('hasOne', 'categoryId', 'Categoría'),
+    ],
+  },
 });
 
 Images.attachSchema(new SimpleSchema({
   index: {
     type: Number,
-    label: 'Lugar'
+    label: 'Lugar',
   },
   description: {
     type: String,
-    label: 'Descripción'
+    label: 'Descripción',
   },
   image: orion.attribute('image', {
-    label: 'Imagen'
+    label: 'Imagen',
   }),
   thumb: orion.attribute('image', {
-    label: 'Fotito Chiquitita'
+    label: 'Fotito Chiquitita',
   }),
   categoryId: orion.attribute('hasOne', {
-    label: 'Categoría'
+    label: 'Categoría',
   }, {
     collection: Categories,
     titleField: 'name',
     publicationName: 'images_categoryId_schema',
   }),
-  createdAt: orion.attribute('createdAt')
+  createdAt: orion.attribute('createdAt'),
 }));

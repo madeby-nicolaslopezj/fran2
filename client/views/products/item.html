@@ -1,0 +1,26 @@
+<template name='productsIndexItem'>
+  <div class="item">
+    <div class='row'>
+      <div class='col-sm-7'>
+        <div class='image-box' style='background-image: url({{ selectedImage.url }})'></div>
+        <div class="thumbs-container">
+          {{# each images }}
+            <div class='thumb-box {{# if isSelected }}selected{{/ if }}' style='background-image: url({{ url }})'></div>
+          {{/ each }}
+        </div>
+      </div>
+      <div class='col-sm-5'>
+        <br><br><br>
+        <p>
+          {{ description }}
+        </p>
+        <p>
+          {{ size }}
+        </p>
+        <p>
+          {{ formatMoney price }}
+        </p>
+      </div>
+    </div>
+  </div>
+</template>

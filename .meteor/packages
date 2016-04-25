@@ -12,7 +12,6 @@ session                 # Client-side reactive dictionary for your app
 jquery                  # Helpful client-side library
 tracker                 # Meteor's client-side reactive programming library
 
-standard-minifiers      # JS/CSS minifiers run for production mode
 es5-shim                # ECMAScript 5 compatibility for older browsers.
 ecmascript              # Enable ECMAScript2015+ syntax in app code
 
@@ -26,7 +25,7 @@ orionjs:relationships
 
 vsivsi:orion-file-collection
 
-nicolaslopezj:roles@=2.0.0
+nicolaslopezj:roles
 
 fourseven:scss
 reywood:bootstrap3-sass
@@ -42,3 +41,8 @@ email
 gadicohen:sitemaps
 gwendall:simple-schema-i18n
 reywood:iron-router-ga
+
+nicolaslopezj:orion-exporter
+standard-minifier-css
+standard-minifier-js
+numeral:numeral
