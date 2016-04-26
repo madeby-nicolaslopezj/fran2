@@ -1,0 +1,2 @@
+Template.productListItem.onRendered(function() {
+});

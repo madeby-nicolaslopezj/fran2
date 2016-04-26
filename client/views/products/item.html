@@ -1,15 +1,17 @@
 <template name='productsIndexItem'>
-  <div class="item">
-    <div class='row'>
-      <div class='col-sm-7'>
-        <div class='image-box' style='background-image: url({{ selectedImage.url }})'></div>
-        <div class="thumbs-container">
-          {{# each images }}
-            <div class='thumb-box {{# if isSelected }}selected{{/ if }}' style='background-image: url({{ url }})'></div>
-          {{/ each }}
+  <div class="item container-fluid" style="height: 100%">
+    <div class='row' style="height: 100%">
+      <div class='col-sm-9' style="height: 100%">
+        <div class="images">
+          <div class='show-image-box' style='background-image: url({{ selectedImage.url }})'></div>
+          <div class="thumbs-container">
+            {{# each images }}
+              <div class='thumb-box {{# if isSelected }}selected{{/ if }}' style='background-image: url({{ url }})'></div>
+            {{/ each }}
+          </div>
         </div>
       </div>
-      <div class='col-sm-5'>
+      <div class='col-sm-3'>
         <br><br><br>
         <p>
           {{ description }}
@@ -20,7 +22,17 @@
         <p>
           {{ formatMoney price }}
         </p>
+        <div class="checkbox">
+          <label>
+            <input type="checkbox" value="" style="margin-top: 1px">
+            Seleccionado
+          </label>
+        </div>
       </div>
     </div>
   </div>
+  <style>
+    html, body { overflow: hidden; height: 100% }
+    body { margin:0; padding:0; }
+  </style>
 </template>

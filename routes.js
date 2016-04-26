@@ -17,7 +17,7 @@ Router.route('/about', {
   layoutTemplate: 'layout',
 });
 
-Router.route('/venta', {
+Router.route('/venta/:productId?', {
   name: 'products.index',
   layoutTemplate: 'layout',
 });

@@ -9,6 +9,11 @@ Products = new orion.collection('products', {
     columns: [
       { data: 'index', title: 'Lugar' },
       orion.attributeColumn('images', 'images', 'Imagenes'),
+      {
+        data: 'isLandscape',
+        title: 'Es horizontal',
+        render: val => val ? 'Si' : 'No',
+      },
     ],
   },
 });
@@ -29,6 +34,11 @@ Products.attachSchema({
   price: {
     type: Number,
     label: 'Precio (solo numeros)',
+  },
+  isLandscape: {
+    type: Boolean,
+    label: 'Es horizontal',
+    optional: true,
   },
   images: orion.attribute('images', {
     label: 'Imagenes',

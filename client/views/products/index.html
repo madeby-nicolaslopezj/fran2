@@ -8,12 +8,19 @@
       <div class="container-fluid store">
         <div class="row">
           {{# each products }}
-            <div class="col-sm-6 store-col {{# if isSelected }}selected{{/ if }}">
-              {{> productsIndexItem }}
+            <div class="open-product store-col {{# if isLandscape }}is-landscape col-sm-6{{ else }}col-sm-3{{/ if }} {{# if isSelected }}selected{{/ if }}">
+              {{> productListItem }}
             </div>
           {{/ each }}
         </div>
-
+        {{# with selected }}
+          <div class="selected-product">
+            <div class="close">
+              <i class="fa fa-times-circle" aria-hidden="true"></i>
+            </div>
+            {{> productsIndexItem }}
+          </div>
+        {{/ with}}
       </div>
       {{> productsContact products=selectedProducts }}
     {{ else }}

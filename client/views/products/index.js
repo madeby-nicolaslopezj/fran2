@@ -1,6 +1,7 @@
 Template.productsIndex.onCreated(function() {
   this.subscribe('products.all');
-  this.selectedProducts = new ReactiveVar([]);
+  Session.set('selectedProducts', []);
+  this.selectedProduct = new ReactiveVar(null);
 });
 
 Template.productsIndex.onRendered(function() {
@@ -27,27 +28,48 @@ Template.productsIndex.helpers({
     return Products.find({}, { sort: { index: 1 } }).fetch();
   },
   selectedProducts: function() {
-    return Template.instance().selectedProducts.get();
+    return Session.get('selectedProducts');
   },
   isSelected: function() {
-    const selected = Template.instance().selectedProducts.get();
+    const selected = Session.get('selectedProducts');
     return _.contains(selected, this);
+  },
+  selected: function() {
+    return Products.findOne(Router.current().params.productId);
+  },
+  isSelectedThisIndex: function() {
+    const selected = Products.findOne(Router.current().params.productId);
+    if (!selected) {
+      return false;
+    }
+    return this._id == selected._id;
   },
 });
 
 Template.productsIndex.events({
-  'click .store-col': function(event, template) {
-    if ($(event.target).hasClass('thumb-box')) {
+  'click .select-product': function(event, template) {
+    if ($(event.target).hasClass('thumb-box') || $(event.target).hasClass('image-box')) {
       return;
     }
     if (Session.get('contactProductsSent')) {
       return;
     }
-    const selected = template.selectedProducts.get();
+    const selected = Session.get('selectedProducts');
     if (_.contains(selected, this)) {
-      template.selectedProducts.set(_.without(selected, this));
+      Session.set('selectedProducts', _.without(selected, this));
     } else {
-      template.selectedProducts.set(_.union(selected, this));
+      Session.set('selectedProducts', _.union(selected, this));
     }
+  },
+  'click .open-product': function(event, template) {
+    const selected = Products.findOne(Router.current().params.productId);
+    if (_.isEqual(selected, this)) {
+      Router.go('products.index', { productId: '' })
+    } else {
+      Router.go('products.index', { productId: this._id })
+    }
+  },
+  'click .close': function() {
+    Router.go('products.index', { productId: '' });
   },
 })

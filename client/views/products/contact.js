@@ -13,7 +13,7 @@ Template.productsContact.helpers({
 
 AutoForm.addHooks('contactProductsForm', {
   onSuccess: function(formType, result) {
-    console.log('on sucess');
     Session.set('contactProductsSent', true);
+    ga('send', 'event', 'contacto', 'contacto-venta');
   },
 });

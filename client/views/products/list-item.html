@@ -1,0 +1,6 @@
+<template name='productListItem'>
+  <div
+  class='image-box {{# if isLandscape }}is-landscape{{/ if }}'
+  style='background-image: url({{# with getFirst images }}{{ url }}{{/ with }})'
+  ></div>
+</template>
