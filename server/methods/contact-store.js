@@ -36,7 +36,7 @@ Meteor.methods({
 
     Meteor.defer(function() {
       Email.send({
-        to: 'nicolaslopezj@me.com',
+        to: 'franciscainfantelorca@gmail.com',
         from: 'Página Francisca Infante <franciscainfantelorca@gmail.com>',
         subject: 'Contacto Francisca Infante',
         replyTo: doc.email,
