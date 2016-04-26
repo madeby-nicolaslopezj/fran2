@@ -19,12 +19,12 @@ Meteor.methods({
 
     var productsPart = '';
     if (doc.productsIds) {
-      productsPart += '<br>';
+      productsPart += '<br><br><br>Le interesa:<br><br>';
       const baseUrl = Router.url('home');
       Products.find({ _id: { $in: doc.productsIds.split(',') } }).forEach(product => {
         const imageUrl = product.images[0].url.substring(1);
         productsPart += `
-        <img src="${baseUrl}${imageUrl}" style="height: 60px"/>
+        <img src="${baseUrl}${imageUrl}" height="120"/>
         `;
       });
     }

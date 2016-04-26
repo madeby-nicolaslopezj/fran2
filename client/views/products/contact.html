@@ -5,7 +5,7 @@
     <div class="row">
       <div class="col-sm-6">
         {{# unless contactSent }}
-          {{# autoForm schema='ContactSchema' id="contactForm" type="method" meteormethod="sendContactStore" }}
+          {{# autoForm schema='ContactSchema' id="contactProductsForm" type="method" meteormethod="sendContactStore" }}
             {{> afQuickField name="productsIds" type="hidden" value=getProducts }}
             {{> afQuickField name="name" placeholder="Nombre" class="span12" label=false }}
             {{> afQuickField name="email"  placeholder="Email" class="span12" label=false }}
@@ -36,8 +36,8 @@
               </p>
             </div>
           </div>
-
         {{/ each }}
+        <br>
       </div>
     </div>
   </div>
