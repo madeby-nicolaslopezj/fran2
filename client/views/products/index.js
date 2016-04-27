@@ -10,6 +10,11 @@ Template.productsIndex.onRendered(function() {
     const productId = FlowRouter.getParam('productId');
     if (productId) {
       const product = Products.findOne(productId, { sort: { index: 1 } });
+      if (!product) {
+        return setMeta({
+          title: 'Venta',
+        });
+      }
       setMeta({
         title: 'Venta',
         image: product.images[0].url,

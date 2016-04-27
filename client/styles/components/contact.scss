@@ -9,7 +9,7 @@ $background-color: #fff;
     padding-bottom: 10px;
   }
 
-  button {
+  .btn.btn-contact {
     background-color: $background-color;
     border-color: $line-color;
     color: $line-color;
@@ -18,6 +18,9 @@ $background-color: #fff;
     &:hover {
       background-color: $pink-color;
       color: $line-color;
+    }
+    &:focus {
+      outline:0;
     }
   }
 

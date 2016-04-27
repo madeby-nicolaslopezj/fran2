@@ -1,20 +1,36 @@
-sitemaps.add('/sitemap.xml', function () {
+sitemaps.add('/sitemap.xml', function() {
 
-  var basicRoutes = ['home', 'about', 'contact'];
+  var basicRoutes = ['home', 'about', 'contact', 'products.index'];
 
   var items = [];
 
-  _.each(basicRoutes, function (routeName) {
+  _.each(basicRoutes, function(routeName) {
     items.push({
-      page: Router.path(routeName),
+      page: FlowRouter.path(routeName),
       lastmod: new Date(),
       changefreq: 'weekly',
     });
   });
 
-  Categories.find().forEach(function (category) {
+  Categories.find().forEach(function(category) {
     items.push({
-      page: Router.path('work', category),
+      page: FlowRouter.path('work', category),
+      lastmod: new Date(),
+      changefreq: 'weekly',
+    });
+
+    Images.find({ categoryId: category._id }).forEach(function(image) {
+      items.push({
+        page: FlowRouter.path('work', { url: category.url, imageId: image._id }),
+        lastmod: new Date(),
+        changefreq: 'weekly',
+      });
+    });
+  });
+
+  Products.find().forEach(function(product) {
+    items.push({
+      page: FlowRouter.path('products.index', { productId: product._id }),
       lastmod: new Date(),
       changefreq: 'weekly',
     });

@@ -3,7 +3,29 @@ Template.productsIndexItem.onCreated(function() {
 });
 
 Template.productsIndexItem.onRendered(function() {
-  Template.instance().selectedImage.set(this.data.images[0]);
+  const instance = Template.instance();
+  instance.selectedImage.set(this.data.images[0]);
+
+  $(document).keydown((e) => {
+    if (e.keyCode == 27) {
+      return RouterLayer.go('products.index', { productId: '' });
+    }
+    const selected = instance.selectedImage.get();
+    const currentIndex = this.data.images.indexOf(selected);
+    var nextIndex = 0;
+    if (e.keyCode == 39) {
+      nextIndex = currentIndex + 1;
+      if (nextIndex == this.data.images.length) {
+        nextIndex = 0;
+      }
+    } else if (e.keyCode == 37) {
+      nextIndex = currentIndex - 1;
+      if (nextIndex < 0) {
+        nextIndex = this.data.images.length - 1;
+      }
+    }
+    instance.selectedImage.set(this.data.images[nextIndex]);
+  });
 });
 
 Template.productsIndexItem.helpers({
@@ -24,11 +46,11 @@ Template.productsIndexItem.events({
   'click .thumb-box': function(event, template) {
     template.selectedImage.set(this);
   },
-  'click .image-box': function(event, template) {
+  'click .show-image-box': function(event, template) {
     const image = template.selectedImage.get();
     window.open(image.url);
   },
-  'change input[type=checkbox]': function(event, template) {
+  'click .btn-select': function(event, template) {
     const selected = Session.get('selectedProducts');
     const item = _.findWhere(selected, { _id: this._id });
     if (item) {

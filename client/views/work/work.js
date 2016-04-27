@@ -40,6 +40,7 @@ Template.work.onRendered(function() {
         query = { _id: imageId };
       }
       const image = Images.findOne(query, { sort: { index: 1 } });
+      Template.instance().activeId = image._id;
       setMeta({
         title: category.name,
         image: image.image.url,
@@ -78,9 +79,7 @@ Template.work.helpers({
     return category && Images.find({ categoryId: category._id }, { sort: { index: 1 } });
   },
   isFirst: function() {
-    var category = Categories.findOne({ url: RouterLayer.getParam('url') });
-    var image = category && Images.findOne({ categoryId: category._id }, { sort: { index: 1 } });
-    return image && image._id == this._id;
+    return Template.instance().activeId == this._id;
   },
 });
 

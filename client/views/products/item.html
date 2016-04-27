@@ -22,15 +22,14 @@
         <p>
           {{ formatMoney price }}
         </p>
-        <div class="checkbox">
-          <label>
-            <input type="checkbox" value="" style="margin-top: 1px" checked={{isSelectedItem}}>
-            Seleccionar
-          </label>
-        </div>
+        <button type="button" class="btn btn-select {{#if isSelectedItem}}active{{/if}}">Seleccionar</button>
+        <br>
       </div>
     </div>
   </div>
   <style>
+  body, html {
+    overflow:hidden;
+  }
   </style>
 </template>

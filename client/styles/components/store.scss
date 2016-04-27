@@ -1,6 +1,9 @@
 @import "{}/client/styles/components/_variables.scss";
 @import "{reywood:bootstrap3-sass}/assets/stylesheets/bootstrap/variables";
 
+$line-color: lighten(#000, 40%);
+$background-color: #fff;
+
 .container.store.text {}
 
 .store {
@@ -76,6 +79,8 @@
   .selected-product {
     background-color: #fff;
     position: fixed;
+    overflow: scroll;
+    -webkit-overflow-scrolling: touch;
     top: 0;
     left: 0;
     height: 100%;
@@ -109,6 +114,21 @@
       .fa {
         color: #000;
         font-size: 30px;
+      }
+    }
+
+    .btn-select {
+      background-color: $background-color;
+      border-color: $line-color;
+      color: $line-color;
+      border-radius: 0;
+      font-size: 12px;
+      &.active {
+        background-color: $pink-color;
+        color: $line-color;
+      }
+      &:focus {
+        outline:0;
       }
     }
   }
