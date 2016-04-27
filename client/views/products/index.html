@@ -8,7 +8,7 @@
       <div class="container-fluid store">
         <div class="row">
           {{# each products }}
-            <div class="open-product store-col {{# if isLandscape }}is-landscape col-sm-6{{ else }}col-sm-3{{/ if }} {{# if isSelected }}selected{{/ if }}">
+            <div class="open-product store-col {{# if isLandscape }}is-landscape col-sm-6{{ else }}col-sm-4{{/ if }} {{# if isSelected }}selected{{/ if }}">
               {{> productListItem }}
             </div>
           {{/ each }}

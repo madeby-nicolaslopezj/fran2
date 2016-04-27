@@ -15,5 +15,6 @@ AutoForm.addHooks('contactProductsForm', {
   onSuccess: function(formType, result) {
     Session.set('contactProductsSent', true);
     ga('send', 'event', 'contacto', 'contacto-venta');
+    fbq('track', 'Lead');
   },
 });

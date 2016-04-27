@@ -20,7 +20,7 @@ Meteor.methods({
     var productsPart = '';
     if (doc.productsIds) {
       productsPart += '<br><br><br>Le interesa:<br><br>';
-      const baseUrl = Router.url('home');
+      const baseUrl = FlowRouter.url('home');
       Products.find({ _id: { $in: doc.productsIds.split(',') } }).forEach(product => {
         const imageUrl = product.images[0].url.substring(1);
         productsPart += `
