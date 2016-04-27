@@ -7,6 +7,6 @@ Template.layout.helpers({
     return Categories.find({}, { sort: { index: 1 } });
   },
   getCategoryPath: function() {
-    return Router.path('work', this);
-  }
+    return RouterLayer.pathFor('work', this);
+  },
 });

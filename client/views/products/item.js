@@ -14,6 +14,10 @@ Template.productsIndexItem.helpers({
     const selected = Template.instance().selectedImage.get();
     return _.isEqual(selected, this);
   },
+  isSelectedItem: function() {
+    const selected = Session.get('selectedProducts');
+    return !!_.findWhere(selected, { _id: this._id });
+  },
 })
 
 Template.productsIndexItem.events({
@@ -26,9 +30,9 @@ Template.productsIndexItem.events({
   },
   'change input[type=checkbox]': function(event, template) {
     const selected = Session.get('selectedProducts');
-    console.log(selected, this);
-    if (_.contains(selected, this)) {
-      Session.set('selectedProducts', _.without(selected, this));
+    const item = _.findWhere(selected, { _id: this._id });
+    if (item) {
+      Session.set('selectedProducts', _.without(selected, item));
     } else {
       Session.set('selectedProducts', _.union(selected, this));
     }

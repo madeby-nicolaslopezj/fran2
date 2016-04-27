@@ -1,28 +1,29 @@
-Router.configure({
-  trackPageView: true,
-});
-
-Router.route('/', {
+RouterLayer.route('/', {
   name: 'home',
-  layoutTemplate: 'layout',
+  template: 'home',
+  layout: 'layout',
 });
 
-Router.route('/contacto', {
+RouterLayer.route('/contacto', {
   name: 'contact',
-  layoutTemplate: 'layout',
+  template: 'contact',
+  layout: 'layout',
 });
 
-Router.route('/about', {
+RouterLayer.route('/about', {
   name: 'about',
-  layoutTemplate: 'layout',
+  template: 'about',
+  layout: 'layout',
 });
 
-Router.route('/venta/:productId?', {
+RouterLayer.route('/venta/:productId?', {
   name: 'products.index',
-  layoutTemplate: 'layout',
+  template: 'productsIndex',
+  layout: 'layout',
 });
 
-Router.route('/:url', {
+RouterLayer.route('/:url/:imageId?', {
   name: 'work',
-  layoutTemplate: 'layout',
+  template: 'work',
+  layout: 'layout',
 });

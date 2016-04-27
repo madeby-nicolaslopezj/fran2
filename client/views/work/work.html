@@ -4,7 +4,7 @@
       <div id="carousel" class="carousel slide hidden-xs">
         <div class="carousel-inner">
           {{# each images }}
-            <div class="item {{# if isFirst }}active{{/ if }}">
+            <div class="item {{# if isFirst }}active{{/ if }}" data-id="{{ _id }}">
               <div class="imagensita" style="background-image: url({{ image.url }})"></div>
               <div class="descripcionsita">{{ description }}</div>
             </div>

@@ -30,19 +30,19 @@ nicolaslopezj:roles
 fourseven:scss
 reywood:bootstrap3-sass
 
-iron:router
 fortawesome:fontawesome
-zimme:iron-router-active
 ongoworks:spiderable
-manuelschoebel:ms-seo
 meteorhacks:fast-render
 less
 email
 gadicohen:sitemaps
 gwendall:simple-schema-i18n
-reywood:iron-router-ga
 
 nicolaslopezj:orion-exporter
 standard-minifier-css
 standard-minifier-js
 numeral:numeral
+
+kadira:flow-router
+kadira:blaze-layout
+kadira:dochead

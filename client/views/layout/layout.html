@@ -10,20 +10,20 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="{{ pathFor 'home' }}">Francisca Infante</a>
+            <a class="navbar-brand" href="{{ RouterLayerPathFor 'home' }}">Francisca Infante</a>
           </div>
            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
              <ul class="nav navbar-nav navbar-right">
-               <li class="{{ isActiveRoute regex='about' }}"><a href="{{ pathFor 'about' }}">About</a></li>
-               <li class="dropdown {{ isActiveRoute regex='work' }}">
+               <li class="{{ RouterLayerIsActiveRoute 'about' }}"><a href="{{ RouterLayerPathFor 'about' }}">About</a></li>
+               <li class="dropdown {{ RouterLayerIsActiveRoute 'work' }}">
                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Work <span class="caret"></span></a>
                  <ul class="dropdown-menu">
                    {{# each categories }}
-                    <li class="{{ isActivePath path=getCategoryPath }}"><a href="{{ pathFor 'work' }}">{{ name }}</a></li>
+                    <li class="{{ RouterLayerIsActiveRoute 'work' url=url }}"><a href="{{ RouterLayerPathFor 'work' url=url }}">{{ name }}</a></li>
                    {{/ each }}
                  </ul>
                </li>
-               <li class="{{ isActiveRoute regex='contact' }}"><a href="{{ pathFor 'contact' }}">Contact</a></li>
+               <li class="{{ RouterLayerIsActiveRoute 'contact' }}"><a href="{{ RouterLayerPathFor 'contact' }}">Contact</a></li>
              </ul>
            </div>
         </div>
