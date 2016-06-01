@@ -143,3 +143,11 @@ $background-color: #fff;
   }
 
 }
+
+.heighter {
+  height: 100%;
+
+  @media (max-width: $screen-xs-max) {
+    height: 80%;
+  }
+}

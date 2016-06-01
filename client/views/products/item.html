@@ -1,6 +1,6 @@
 <template name='productsIndexItem'>
   <div class="item container-fluid" style="height: 100%">
-    <div class='row' style="height: 100%">
+    <div class='row heighter'>
       <div class='col-sm-9' style="height: 100%">
         <div class="images">
           <div class='show-image-box' style='background-image: url({{ selectedImage.url }})'></div>
@@ -22,8 +22,10 @@
         <p>
           {{ formatMoney price }}
         </p>
-        <button type="button" class="btn btn-select {{#if isSelectedItem}}active{{/if}}">Seleccionar</button>
-        <br>
+        <div>
+          <button type="button" class="btn btn-select {{#if isSelectedItem}}active{{/if}}">Seleccionar</button>
+        </div>
+        <br><br>
       </div>
     </div>
   </div>
