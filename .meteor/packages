@@ -31,7 +31,6 @@ fourseven:scss
 reywood:bootstrap3-sass
 
 fortawesome:fontawesome
-ongoworks:spiderable
 meteorhacks:fast-render
 less
 email
@@ -46,3 +45,5 @@ numeral:numeral
 kadira:flow-router
 kadira:blaze-layout
 kadira:dochead
+meteorhacks:kadira
+dfischer:prerenderio

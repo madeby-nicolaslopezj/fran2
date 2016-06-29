@@ -29,6 +29,7 @@ ddp-common@1.2.5
 ddp-rate-limiter@1.0.4
 ddp-server@1.2.6
 deps@1.0.12
+dfischer:prerenderio@1.0.9
 diff-sequence@1.0.5
 ecmascript@0.4.3
 ecmascript-runtime@0.2.10
@@ -64,6 +65,7 @@ meteor-platform@1.2.6
 meteorhacks:fast-render@2.14.0
 meteorhacks:inject-data@2.0.0
 meteorhacks:inject-initial@1.0.4
+meteorhacks:kadira@2.28.7
 meteorhacks:meteorx@1.4.1
 meteorhacks:picker@1.0.3
 minifier-css@1.1.11
@@ -76,6 +78,7 @@ modules-runtime@0.6.3
 momentjs:moment@2.10.6
 mongo@1.1.7
 mongo-id@1.0.4
+mongo-livedata@1.0.12
 nicolaslopezj:options@1.0.1
 nicolaslopezj:orion-exporter@1.4.0
 nicolaslopezj:reactive-templates@1.2.1
@@ -85,7 +88,6 @@ npm-bcrypt@0.8.5
 npm-mongo@1.4.43
 numeral:numeral@1.5.3_1
 observe-sequence@1.0.11
-ongoworks:spiderable@1.0.7
 ordered-dict@1.0.7
 orionjs:accounts@1.8.1
 orionjs:attributes@1.8.0
