@@ -28,7 +28,7 @@ vsivsi:file-collection
 
 nicolaslopezj:roles
 
-fourseven:scss
+fourseven:scss@=3.8.0_1
 reywood:bootstrap3-sass
 
 fortawesome:fontawesome
