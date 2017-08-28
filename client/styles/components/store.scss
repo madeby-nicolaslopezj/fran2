@@ -4,12 +4,13 @@
 $line-color: lighten(#000, 40%);
 $background-color: #fff;
 
-.container.store.text {}
+.container.store.text {
+}
 
 .store {
-
-  &.text, &.text * {
-    font-family: "Letter Gothic Std", Menlo, Monaco, Consolas, "Courier New", monospace !important;
+  &.text,
+  &.text * {
+    font-family: $font-family-base !important;
   }
 
   .store-col {
@@ -20,7 +21,7 @@ $background-color: #fff;
 
     &:nth-child(3n) {
     }
-    &:nth-last-child(-n+4) {
+    &:nth-last-child(-n + 4) {
       border-bottom: 1px solid #eee;
     }
 
@@ -33,7 +34,6 @@ $background-color: #fff;
     }
 
     .image-box {
-
     }
   }
 
@@ -52,7 +52,7 @@ $background-color: #fff;
     border-radius: 3px;
     cursor: zoom-in;
 
-    &.is-landscape {
+    &.is-landscape  {
       height: 350px;
     }
   }
@@ -73,8 +73,6 @@ $background-color: #fff;
       cursor: zoom-in;
     }
   }
-
-
 
   .selected-product {
     background-color: #fff;
@@ -117,7 +115,8 @@ $background-color: #fff;
       }
     }
 
-    .btn-select, .btn-close {
+    .btn-select,
+    .btn-close {
       background-color: $background-color;
       border-color: $line-color;
       color: $line-color;
@@ -128,7 +127,7 @@ $background-color: #fff;
         color: $line-color;
       }
       &:focus {
-        outline:0;
+        outline: 0;
       }
     }
   }
@@ -141,10 +140,9 @@ $background-color: #fff;
     background-size: cover;
     display: inline-block;
   }
-
 }
 
-.heighter {
+.heighter  {
   height: 100%;
 
   @media (max-width: $screen-xs-max) {

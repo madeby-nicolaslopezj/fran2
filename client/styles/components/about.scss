@@ -1,5 +1,7 @@
+@import "{}/client/styles/components/_variables.scss";
+
 .about {
   .content * {
-    font-family: "Letter Gothic Std", Menlo, Monaco, Consolas, "Courier New", monospace !important;
+    font-family: $font-family-base !important;
   }
 }

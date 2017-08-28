@@ -1,5 +1,6 @@
 <head>
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
   <meta name="viewport" content="width=device-width,minimal-ui,initial-scale=1,maximum-scale=1.0,user-scalable=no">
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -9,14 +10,25 @@
   <![endif]-->
 
   <script>
-  !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-  n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
-  n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
-  t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
-  document,'script','//connect.facebook.net/en_US/fbevents.js');
-  // Insert Your Facebook Pixel ID below.
-  fbq('init', '1721146924797651');
-  fbq('track', 'PageView');
-  console.log('Facebook Pixel loaded');
-  </script>
+  !(function(f, b, e, v, n, t, s) {
+  if (f.fbq) return
+  n = f.fbq = function() {
+    n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+  }
+  if (!f._fbq) f._fbq = n
+  n.push = n
+  n.loaded = !0
+  n.version = '2.0'
+  n.queue = []
+  t = b.createElement(e)
+  t.async = !0
+  t.src = v
+  s = b.getElementsByTagName(e)[0]
+  s.parentNode.insertBefore(t, s)
+})(window, document, 'script', '//connect.facebook.net/en_US/fbevents.js')
+// Insert Your Facebook Pixel ID below.
+fbq('init', '1721146924797651')
+fbq('track', 'PageView')
+console.log('Facebook Pixel loaded')
+</script>
 </head>

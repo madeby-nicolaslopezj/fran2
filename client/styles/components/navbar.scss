@@ -3,6 +3,7 @@
 .navbar {
   .navbar-brand {
     text-transform: uppercase;
+    font-weight: 200;
   }
 
   @media (min-width: $grid-float-breakpoint) {
