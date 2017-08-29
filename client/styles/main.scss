@@ -8,3 +8,30 @@
 body {
   color: #4f4f4f;
 }
+
+.about .content {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+b {
+  color: #000 !important;
+}
+
+.about .content {
+  ul {
+    list-style: none;
+  }
+
+  ul li:before {
+    content: '•';
+    position: relative;
+    top: 1px;
+    font-size: 110%; /* or whatever */
+    padding-right: 10px;
+  }
+
+  li {
+    margin-bottom: 2px !important;
+  }
+}
