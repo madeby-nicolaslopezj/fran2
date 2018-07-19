@@ -1,8 +1,9 @@
-@import "{}/client/styles/components/_variables.scss";
+@import '{}/client/styles/components/_variables.scss';
 
-.home-color-section {
+.home-img {
+  margin-top: -40px;
   width: 100%;
-  height: 300px;
-  margin-top: 240px;
-  background-color: $brand-primary;
+  height: calc(100vh - 32px);
+  background-size: cover;
+  background-position: center;
 }

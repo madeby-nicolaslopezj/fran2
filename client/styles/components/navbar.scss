@@ -1,11 +1,12 @@
-@import "{}/client/styles/components/_variables.scss";
+@import '{}/client/styles/components/_variables.scss';
+
+.navbar-brand {
+  text-transform: uppercase;
+  font-weight: 300;
+  letter-spacing: 2pt;
+}
 
 .navbar {
-  .navbar-brand {
-    text-transform: uppercase;
-    font-weight: 200;
-  }
-
   @media (min-width: $grid-float-breakpoint) {
     .navbar-col {
       margin: 0 5%;
