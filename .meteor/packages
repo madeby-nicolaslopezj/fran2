@@ -48,3 +48,4 @@ kadira:dochead
 dfischer:prerenderio
 shell-server@0.2.4
 dynamic-import
+force-ssl

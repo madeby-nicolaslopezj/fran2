@@ -40,6 +40,8 @@ ejson@1.0.13
 email@1.2.3
 es5-shim@4.6.15
 fastclick@1.0.13
+force-ssl@1.0.15
+force-ssl-common@1.0.15
 fortawesome:fontawesome@4.7.0
 fourseven:scss@3.8.0_1
 gadicohen:robots-txt@0.0.10
