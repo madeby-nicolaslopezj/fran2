@@ -2,7 +2,9 @@ Template.productsIndex.onCreated(function() {
   this.subscribe('products.all')
   Session.set('selectedProducts', [])
   this.selectedProduct = new ReactiveVar(null)
+})
 
+Template.productsIndex.onRendered(function() {
   ;(function(d, s, id) {
     var js,
       fjs = d.getElementsByTagName(s)[0]
@@ -13,9 +15,6 @@ Template.productsIndex.onCreated(function() {
       'https://connect.facebook.net/es_ES/sdk/xfbml.customerchat.js#xfbml=1&version=v2.12&autoLogAppEvents=1'
     fjs.parentNode.insertBefore(js, fjs)
   })(document, 'script', 'facebook-jssdk')
-})
-
-Template.productsIndex.onRendered(function() {
   this.autorun(function() {
     const productId = FlowRouter.getParam('productId')
     if (productId) {
